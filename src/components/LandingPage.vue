@@ -17,7 +17,7 @@
           </p>
         </div>
         <div class="banner_content">
-          <img src="../assets/images/landing/files.png" alt="" />
+          <img src="../assets/images/landing/files.png" alt="" class="file_img">
           <div class="file_upload_box">
             <label class="main_upload_label main_btn" for="upload_file"
               >選擇檔案</label
@@ -30,21 +30,26 @@
               @change="jump"
             />
             <div class="content_text">
-              <p class="text_style_b">或拖移檔案到此處</p>
-              <span class="text_style_g">(限10MB 內的PDF或JPG檔)</span>
+              <p class="text_style_draggable">或拖移檔案到此處</p>
+              <span class="text_style_limit">(限10MB 內的PDF或JPG檔)</span>
             </div>
           </div>
           <img src="../assets/images/landing/banner-group.png" alt="" class="banner_group_img">
+          <img src="../assets/images/landing/rwd_people_group.png" alt="" class="rwd_people_group_img">
         </div>
       </div>
         </div>
     </div>
   </section>
+  <Footer />
 </template>
 
 <script>
-
+import Footer from '@/components/Footer.vue';
 export default {
+  components: {
+    Footer,
+  },
   data() {
     return {
       mainTitle: "小綠簽",

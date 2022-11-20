@@ -1,16 +1,17 @@
 <template>
   <div class="loading_animate" ref="container">
       <div class="loading_text_box">
-          <p class="loading_text">簽名優化中......</p>
+          <p class="loading_text">上傳中......</p>
       </div>
   </div>
 </template>
 
 <script>
 import lottie from "lottie-web"
-import jsonData from "@/assets/json/loading_pencil.json"
+import jsonData from "@/assets/json/pencil_animated.json"
 
 export default {
+    //參考網路上的教學，原理還不清楚
       data(){
           return{
               anim: null
@@ -29,5 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    svg{
+        width: 100px;
+    }
 </style>

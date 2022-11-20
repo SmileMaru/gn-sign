@@ -1,3 +1,4 @@
+@import './mixin.scss';
 @mixin btn_style($w, $h, $color){
     width: $w;
     height: $h;
@@ -19,13 +20,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: inherit;
 }
 //主要btn
 .main_btn{
     @include btn_style(227px, 60px, #fff);
     border: none;
     background: linear-gradient(360deg, #077854,#35A483 );
-    box-shadow: 1px 4px 6px 0 rgba(0,0,0,11%);
+    @include sm(){
+        width: 150px !important;
+        height: 56px;
+    }
 }
 //確認btn
 .confirm_btn{
@@ -44,6 +49,11 @@
     @include btn_style(17rem, 3.75rem, $primary_color);
     border: 2px solid $primary_color;
     background-color: #fff;
+
+    @include sm(){
+        width: 150px;
+        height: 56px;
+    }
 }
 //手寫簽名btn
 .switch_sign_btn{

@@ -1,5 +1,5 @@
 <template>
-  <section class="canvas_container">
+  <section class="canvas_page_container">
     <div class="header_box">
       <div class="header">
         <img src="../assets/images/logo/logo-group.png" alt="" />
@@ -21,7 +21,8 @@
             </ul>
           </div>
           <div class="canvas_box">
-            <canvas id="canvas_board"></canvas>
+            <canvas id="canvas_board"  width="500"
+      height="300"></canvas>
           </div>
         </div>
         <!-- 匯入簽名 -->
@@ -102,6 +103,7 @@ export default {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
     });
+
     const startDraw = (e) => {
       isDrawing = true;
       ctx.beginPath(); //createing new path to draw
@@ -113,7 +115,7 @@ export default {
       ctx.lineTo(e.offsetX, e.offsetY);
       ctx.stroke();
     };
-    //color click event effect
+    //顏色選取事件效果
     colorBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         document

@@ -1,4 +1,4 @@
-.canvas_container{
+.canvas_page_container{
     @include base(100%,100vh);
     background-color: $bg_gray_color;
     .canvas_wrapper{
@@ -64,15 +64,22 @@
 }
 .canvas_group_wrapper{
     position: relative;
-    // border: 1px solid black;
+    box-sizing: border-box;
 }
 .canvas_box{
     position: relative;
+    @include sm(){
+        display: flex;
+        justify-content: center;
+    }
     #canvas_board{
-        @include base(36rem,20rem);
+        @include base(39rem,20rem);
         border-radius: 26px;
         background-color: #fff;
         margin: 2rem 0;
+        @include sm(){
+            @include base(343px,200px);
+        }
     }
 }
 .img_signature{

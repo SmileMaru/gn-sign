@@ -13,12 +13,12 @@ $bg_gray_color: #F0F0F0;
 $share_text_color_g: #35A483;
 $share_text_color_b: #424242;
 
-.text_style_g{
+.text_style_limit{
     color: $share_text_color_g;
     font-size: 14px;
     font-weight: 400;
 }
-.text_style_b{
+.text_style_draggable{
     font-size: 16px;
     color: $share_text_color_b;
 }

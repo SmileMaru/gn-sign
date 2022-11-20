@@ -2,22 +2,32 @@
     @include base(100%, 100vh);
     overflow: hidden;
     box-sizing: border-box;
+    @include md(){
+        background-color: $bg_gray_color;
+    }
     .landing_wrapper{
         height: 100vh;
         background-image: url(../assets/images/landing//side-1.png),url(../assets/images/landing//side-2.png);
         background-repeat: no-repeat;
         background-position: 0 100%,100% 0;
+        @include md(){
+            background: none;
+        }
     }
 }
 .header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 2rem 2rem;
+    padding: 2rem;
     max-width: 85vw;
     @include margin_auto;
+    @include sm(){
+        padding: 1.5rem;
+    }
 }
 .banner_intro{
+    max-width: 1300px;
     margin: auto;
 }
 .banner_intro_wrapper{
@@ -42,10 +52,16 @@
     .dec_btn{
         position: absolute;
         left: 0;
+        @include md(){
+            display: none;
+        }
     }
 }
 .banner_title_box{
     padding-top: 4rem;
+    @include md(){
+        display: none;
+    }
 }
 .landing_wrapper{
     position: relative;
@@ -76,9 +92,42 @@
     align-items: center;
     margin-top: 2.5rem;
     position: relative;
+    @include md(){
+        @include base(34rem, 35rem);
+        display: flex;
+        justify-content: start;
+    }
+    @include sm(){
+        @include base(299px, 384px);
+        margin-top: 0;
+    }
+    .file_img{
+        @include md(){
+            margin: 3rem 0;
+            @include base(14rem, 11rem);
+        }
+        @include sm(){
+            @include base(134px, 110px);
+        }
+    }
     .banner_group_img{
         position: absolute;
-        bottom: -60%;
+        @include base(720px, 480px);
+        bottom: -70%;
+        @include md(){
+            display: none;
+        }
+    }
+    .rwd_people_group_img{
+        position: absolute;
+        bottom: -30%;
+        @include special{
+            display: none;
+        }
+        @include sm(){
+            bottom: -35%;
+            @include base(320px, 200px);
+        }
     }
 }
 // input style
@@ -89,6 +138,9 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        @include md(){
+            margin: 1rem;
+        }
     }
     .upload_file_input{
         position: absolute;
@@ -102,4 +154,9 @@
 }
 .content_text{
     text-align: center;
+    .text_style_draggable{
+        @include md(){
+            display: none;
+        }
+    }
 }
