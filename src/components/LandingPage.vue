@@ -18,7 +18,7 @@
         </div>
         <div class="banner_content">
           <img src="../assets/images/landing/files.png" alt="" class="file_img">
-          <div class="file_upload_box">
+          <form class="file_upload_box">
             <label class="main_upload_label main_btn" for="upload_file"
               >選擇檔案</label
             >
@@ -26,14 +26,15 @@
               id="upload_file"
               class="upload_file_input"
               type="file"
-              accept="application/pdf"
+              accept=".pdf, .jpg"
+              onchange="checkFileSize()"
               @change="jump"
             />
             <div class="content_text">
               <!-- <p class="text_style_draggable">或拖移檔案到此處</p> -->
-              <span class="text_style_limit">(限10MB 內的PDF或JPG檔)</span>
+              <span class="text_style_limit" id="error">(限10MB 內的PDF或JPG檔)</span>
             </div>
-          </div>
+          </form>
           <img src="../assets/images/landing/banner-group.png" alt="" class="banner_group_img">
           <img src="../assets/images/landing/rwd_people_group.png" alt="" class="rwd_people_group_img">
         </div>
@@ -62,6 +63,14 @@ export default {
       this.$router.push('/About');
     }
   },
+  mounted(){
+    function checkFileSize() {
+    const file = document.getElementById("upload_file").files[0];
+    if (file.size > 10485760) {
+      document.getElementById("error").innerHTML = "限10MB 內的PDF或JPG檔";
+    }
+  }
+  }
 };
 </script>
 
